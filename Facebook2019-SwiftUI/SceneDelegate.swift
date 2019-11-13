@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Facebook2019-SwiftUI
 //
-//  Created by Findl on 11/4/19.
+//  Created by Yassine Daoudi on 11/4/19.
 //  Copyright © 2019 Yassine Daoudi. All rights reserved.
 //
 
@@ -25,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+//            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = MainController()
             self.window = window
             window.makeKeyAndVisible()
         }

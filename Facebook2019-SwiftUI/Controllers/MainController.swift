@@ -2,7 +2,7 @@
 //  MainController.swift
 //  Facebook2019-SwiftUI
 //
-//  Created by Findl on 11/4/19.
+//  Created by Yassine Daoudi on 11/4/19.
 //  Copyright © 2019 Yassine Daoudi. All rights reserved.
 //
 
@@ -10,37 +10,10 @@ import UIKit
 import SwiftUI
 import LBTATools
 
-class PostCell: LBTAListCell<String> {
-    
-    let imageView = UIImageView(backgroundColor: .red)
-    let nameLabel = UILabel(text: "Name Label")
-    let dateLabel = UILabel(text: "Friday at 11:11AM")
-    let postTextLabel = UILabel(text: "Here is my post text")
-    let imageViewGrid = UIView(backgroundColor: .systemTeal)
-    
-    override func setupViews() {
-        backgroundColor = .white
-        
-        stack(
-            hstack(
-                imageView
-                    .withHeight(40)
-                    .withWidth(40),
-                stack(nameLabel, dateLabel),
-                spacing: 8
-            )
-                .padLeft(12)
-                .padRight(12)
-                .padTop(12),
-            postTextLabel,
-            imageViewGrid,
-            spacing: 8
-        )
-        
-    }
-}
 
-class MainController: LBTAListController<PostCell, String>, UICollectionViewDelegateFlowLayout {
+
+class MainController: LBTAListHeaderController<PostCell, String, StoryHeader>, UICollectionViewDelegateFlowLayout {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +22,15 @@ class MainController: LBTAListController<PostCell, String>, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 350)
+        return CGSize(width: view.frame.width, height: 400)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return .init(width: 0, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 12, left: 0, bottom: 0, right: 0)
     }
 }
 
