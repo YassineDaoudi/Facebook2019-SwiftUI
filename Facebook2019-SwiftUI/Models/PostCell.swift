@@ -15,7 +15,7 @@ class PostCell: LBTAListCell<String> {
     let imageView = UIImageView(image: UIImage(named: "DS"), contentMode: .scaleAspectFill)
     let nameLabel = UILabel(text: "Demon Slayer")
     let dateLabel = UILabel(text: "Friday at 11:11AM")
-    let postTextLabel = UILabel(text: "Here is my post text")
+    let postTextLabel = UILabel(text: "Alright now that our mock is finally done and the UI Elements are in place, we can start to input data into cells.")
     let photosGridController = PhotosGridController()
     
     override func setupViews() {
@@ -34,7 +34,8 @@ class PostCell: LBTAListCell<String> {
                 .padLeft(12)
                 .padRight(12)
                 .padTop(12),
-            postTextLabel,
+            postTextLabel
+            ,
             photosGridController.view,
             spacing: 8
         )
